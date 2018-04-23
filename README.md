@@ -5,7 +5,7 @@
     ```
     $ docker-compose run web rails new . --force --database=mysql
     Creating network "ruby_default" with the default driver
-    Creating ruby_db_1 ... done                                                                                             
+    Creating ruby_db_1 ... done
     ¡¦
     ¡¦
     ¡¦
