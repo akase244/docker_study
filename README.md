@@ -6,9 +6,9 @@
     $ docker-compose run web rails new . --force --database=mysql
     Creating network "ruby_default" with the default driver
     Creating ruby_db_1 ... done
-    ・
-    ・
-    ・
+    .
+    .
+    .
     Bundle complete! 18 Gemfile dependencies, 78 gems now installed.
     Use `bundle info [gemname]` to see where a bundled gem is installed.
              run  bundle exec spring binstub --all
@@ -23,9 +23,9 @@
     Building web
     Step 1/8 : FROM ruby:2.5.1
      ---> 1624ebb80e3e
-    ・
-    ・
-    ・
+    .
+    .
+    .
     Successfully built e3dfeb629b59
     Successfully tagged ruby_web:latest
     ```
