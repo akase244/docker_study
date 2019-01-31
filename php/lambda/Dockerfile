@@ -32,6 +32,7 @@ RUN ./buildconf --force && \
     make install
 
 RUN mkdir /tmp/layer
+WORKDIR /tmp/layer
 
 COPY bootstrap /tmp/layer
 RUN chmod +x bootstrap
