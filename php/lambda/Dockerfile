@@ -8,11 +8,15 @@ RUN yum update -y && \
     make \
     libcurl-devel \
     libxml2-devel \
-    openssl-devel \
     tar \
     gzip \
     zip \
     git
+
+WORKDIR /tmp
+RUN curl -sL http://www.openssl.org/source/openssl-1.0.1k.tar.gz | tar -xvz
+WORKDIR /tmp/openssl-1.0.1k
+RUN ./config && make && make install
 
 WORKDIR /tmp
 RUN curl -sL https://github.com/php/php-src/archive/php-7.3.1.tar.gz | tar -xvz
@@ -20,7 +24,7 @@ WORKDIR php-src-php-7.3.1
 RUN ./buildconf --force && \
     ./configure \
       --prefix=/usr/local/ \
-      --with-openssl \
+      --with-openssl=/usr/local/ssl \
       --with-curl \
       --with-zlib \
       --without-pear && \
