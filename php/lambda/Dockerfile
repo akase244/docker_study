@@ -27,6 +27,7 @@ RUN ./buildconf --force && \
       --with-openssl=/usr/local/ssl \
       --with-curl \
       --with-zlib \
+      --enable-pcntl \
       --without-pear && \
     make install
 
