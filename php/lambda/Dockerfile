@@ -32,10 +32,6 @@ RUN ./buildconf --force && \
     make install
 
 RUN mkdir /tmp/layer
-WORKDIR /tmp/layer
-RUN curl -sS https://getcomposer.org/installer | /usr/local/bin/php -- --install-dir=/usr/local/bin --filename=composer
-ENV COMPOSER_ALLOW_SUPERUSER 1
-RUN composer require guzzlehttp/guzzle
 
 COPY bootstrap /tmp/layer
 RUN chmod +x bootstrap
@@ -48,6 +44,5 @@ COPY phpversion.php /tmp/layer/src
 COPY phpinfo.php /tmp/layer/src
 
 RUN zip -r runtime.zip bin bootstrap
-RUN zip -r vendor.zip vendor
 RUN zip -r phpversion.zip src/phpversion.php
 RUN zip -r phpinfo.zip src/phpinfo.php
