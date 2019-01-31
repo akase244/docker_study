@@ -40,3 +40,7 @@ RUN mkdir /tmp/layer/bin && \
 
 RUN mkdir /tmp/layer/src
 COPY phpinfo.php /tmp/layer/src
+
+RUN zip -r runtime.zip bin bootstrap
+RUN zip -r vendor.zip vendor
+RUN zip -r phpinfo.zip src/phpinfo.php
