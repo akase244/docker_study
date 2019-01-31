@@ -44,8 +44,10 @@ RUN mkdir /tmp/layer/bin && \
     cp /usr/local/bin/php /tmp/layer/bin
 
 RUN mkdir /tmp/layer/src
+COPY phpversion.php /tmp/layer/src
 COPY phpinfo.php /tmp/layer/src
 
 RUN zip -r runtime.zip bin bootstrap
 RUN zip -r vendor.zip vendor
+RUN zip -r phpversion.zip src/phpversion.php
 RUN zip -r phpinfo.zip src/phpinfo.php
